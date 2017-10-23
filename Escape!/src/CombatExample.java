@@ -18,6 +18,7 @@ public class CombatExample {
 			System.out.print("With?: ");
 			String weapon = WeaponScanner.nextLine();
 			System.out.println("You chose " + weapon);
+			// will probably have to find a way to back check against inventory
 			if (weapon.equalsIgnoreCase("sword")) {
 				WeaponValue = 10;
 			}
