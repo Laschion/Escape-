@@ -18,6 +18,7 @@ public class CombatExample {
 			System.out.print("With?: ");
 			String weapon = WeaponScanner.nextLine();
 			System.out.println("You chose " + weapon);
+			// will probably have to find a way to back check these against inventory
 			if (weapon.equalsIgnoreCase("sword")) {
 				WeaponValue = 10;
 			}
@@ -39,6 +40,9 @@ public class CombatExample {
 				int x = rand.nextInt(WeaponValue + 1);
 				// adds one because Random shuffles through the numbers before it i.e. an 11
 				// will shuffle 0-10
+				if (WeaponValue<5) {
+					System.out.println("You Notice that your "+weapon+" is next to useless against this enemy");
+				}
 
 				if (x == 0) {
 					PlayerHealth = PlayerHealth - 100000;
@@ -53,6 +57,7 @@ public class CombatExample {
 					PlayerHealth = PlayerHealth - 20;
 					System.out.println("The troll clipped your arm but you've had worse");
 				}
+				
 				if (x == 5 || x == 6) {
 					VTrollHealth = VTrollHealth - 20;
 					System.out.println("you manage to nick the troll with " + weapon);
