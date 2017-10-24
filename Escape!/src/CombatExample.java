@@ -8,6 +8,8 @@ public class CombatExample {
 		int VTrollHealth = 100;
 		int PlayerHealth = 200;
 		int WeaponValue = 0;
+		String enemy = "henchman";
+		// we can go ahead and change just this value for each fight
 		Scanner KillMonster = new Scanner(System.in);
 		Scanner WeaponScanner = new Scanner(System.in);
 
@@ -35,13 +37,13 @@ public class CombatExample {
 				WeaponValue = 0;
 			}
 
-			if (KillTroll.equalsIgnoreCase("kill troll")) {
+			if (KillTroll.equalsIgnoreCase("kill "+enemy)) {
 
 				int x = rand.nextInt(WeaponValue + 1);
 				// adds one because Random shuffles through the numbers before it i.e. an 11
 				// will shuffle 0-10
 				if (WeaponValue<5) {
-					System.out.println("You Notice that your "+weapon+" is next to useless against this enemy");
+					System.out.println("You Notice that your "+weapon+" is next to useless against the "+enemy);
 				}
 
 				if (x == 0) {
@@ -51,24 +53,24 @@ public class CombatExample {
 				}
 				if (x == 1 || x == 2) {
 					PlayerHealth = PlayerHealth - 50;
-					System.out.println("The Troll delivered a hit to " + "your gut dealing some serious damage");
+					System.out.println("The "+enemy+"  delivered a hit to " + "your gut dealing some serious damage");
 				}
 				if (x == 3 || x == 4) {
 					PlayerHealth = PlayerHealth - 20;
-					System.out.println("The troll clipped your arm but you've had worse");
+					System.out.println("The "+enemy+" clipped your arm but you've had worse");
 				}
 				
 				if (x == 5 || x == 6) {
 					VTrollHealth = VTrollHealth - 20;
-					System.out.println("you manage to nick the troll with " + weapon);
+					System.out.println("you manage to nick the "+enemy+" with your " + weapon);
 				}
 				if (x == 7 || x == 8) {
 					VTrollHealth = VTrollHealth - 50;
-					System.out.println("You managed to get a good hit on the troll with your " + weapon);
+					System.out.println("You managed to get a good hit on the "+enemy+" with your " + weapon);
 				}
 				if (x == 9 || x == 10) {
 					VTrollHealth = VTrollHealth - 10000;
-					System.out.println("in a glorious flip you managed to assassinate the troll with your " + weapon);
+					System.out.println("in a glorious flip you managed to assassinate the "+enemy+" with your " + weapon);
 					break;
 				}
 				if (VTrollHealth <= 0) {
@@ -80,7 +82,7 @@ public class CombatExample {
 					System.out.println("You Lose");
 					break;
 				}
-				System.out.println("Trolls Health: " + VTrollHealth);
+				System.out.println(enemy+" Health: " + VTrollHealth);
 				System.out.println("PlayersHealth: " + PlayerHealth);
 				System.out.println("");
 
