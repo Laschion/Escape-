@@ -8,6 +8,7 @@ public class CombatExample {
 		int VTrollHealth = 100;
 		int PlayerHealth = 200;
 		int WeaponValue = 0;
+		int rgnPills = 20; 
 		String enemy = "henchman";
 		// we can go ahead and change just this value for each fight
 		Scanner KillMonster = new Scanner(System.in);
@@ -21,6 +22,12 @@ public class CombatExample {
 			String weapon = WeaponScanner.nextLine();
 			System.out.println("You chose " + weapon);
 			// will probably have to find a way to back check these against inventory
+			
+			
+			
+			
+			
+			
 			if (weapon.equalsIgnoreCase("sword")) {
 				WeaponValue = 10;
 			}
@@ -36,13 +43,32 @@ public class CombatExample {
 			if (weapon.equalsIgnoreCase("manhood")) {
 				WeaponValue = 0;
 			}
+			if (weapon.equalsIgnoreCase("pills")) {
+				WeaponValue = 8675309;
+			}
 
 			if (KillTroll.equalsIgnoreCase("kill "+enemy)) {
 
+				if (WeaponValue == 8675309) {
+					System.out.println("great job you healed the "+enemy);
+					
+				VTrollHealth=VTrollHealth + rgnPills;
+				
+				}
+				
+				
+				
 				int x = rand.nextInt(WeaponValue + 1);
 				// adds one because Random shuffles through the numbers before it i.e. an 11
 				// will shuffle 0-10
-				if (WeaponValue<5) {
+				
+				
+				if (x == -1) {
+					System.out.println("great job pal");
+				}
+				
+				
+				if (WeaponValue<5 & WeaponValue > -1) {
 					System.out.println("You Notice that your "+weapon+" is next to useless against the "+enemy);
 				}
 
@@ -73,6 +99,8 @@ public class CombatExample {
 					System.out.println("in a glorious flip you managed to assassinate the "+enemy+" with your " + weapon);
 					break;
 				}
+				
+				
 				if (VTrollHealth <= 0) {
 					System.out.println("You Win");
 					break;
@@ -86,7 +114,17 @@ public class CombatExample {
 				System.out.println("PlayersHealth: " + PlayerHealth);
 				System.out.println("");
 
-			} else {
+			} 
+			
+			else if (KillTroll.equalsIgnoreCase("restore health") & (weapon.equalsIgnoreCase("pills"))) {
+				PlayerHealth= PlayerHealth + rgnPills;
+				System.out.println(enemy+" Health: " + VTrollHealth);
+				System.out.println("PlayersHealth: " + PlayerHealth);
+				System.out.println("");
+			}
+			
+			
+			else {
 				System.out.println("not a valid command");
 			}
 
