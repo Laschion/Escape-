@@ -31,19 +31,19 @@ public class CombatExample {
 			if (weapon.equalsIgnoreCase("sword")) {
 				WeaponValue = 10;
 			}
-			if (weapon.equalsIgnoreCase("dagger")) {
+			else if (weapon.equalsIgnoreCase("dagger")) {
 				WeaponValue = 8;
 			}
-			if (weapon.equalsIgnoreCase("rock")) {
+			else if (weapon.equalsIgnoreCase("rock")) {
 				WeaponValue = 6;
 			}
-			if (weapon.equalsIgnoreCase("hands")) {
+			else if (weapon.equalsIgnoreCase("hands")) {
 				WeaponValue = 1;
 			}
-			if (weapon.equalsIgnoreCase("manhood")) {
+			else if (weapon.equalsIgnoreCase("manhood")) {
 				WeaponValue = 0;
 			}
-			if (weapon.equalsIgnoreCase("pills")) {
+			else if (weapon.equalsIgnoreCase("pills")) {
 				WeaponValue = 8675309;
 			}
 
@@ -63,11 +63,6 @@ public class CombatExample {
 				// will shuffle 0-10
 				
 				
-				if (x == -1) {
-					System.out.println("great job pal");
-				}
-				
-				
 				if (WeaponValue<5 & WeaponValue > -1) {
 					System.out.println("You Notice that your "+weapon+" is next to useless against the "+enemy);
 				}
@@ -77,24 +72,24 @@ public class CombatExample {
 					System.out.println("your " + weapon + " has failed you, you have died");
 					break;
 				}
-				if (x == 1 || x == 2) {
+				else if (x == 1 || x == 2) {
 					PlayerHealth = PlayerHealth - 50;
 					System.out.println("The "+enemy+"  delivered a hit to " + "your gut dealing some serious damage");
 				}
-				if (x == 3 || x == 4) {
+				else if (x == 3 || x == 4) {
 					PlayerHealth = PlayerHealth - 20;
 					System.out.println("The "+enemy+" clipped your arm but you've had worse");
 				}
 				
-				if (x == 5 || x == 6) {
+				else if (x == 5 || x == 6) {
 					VTrollHealth = VTrollHealth - 20;
 					System.out.println("you manage to nick the "+enemy+" with your " + weapon);
 				}
-				if (x == 7 || x == 8) {
+				else if (x == 7 || x == 8) {
 					VTrollHealth = VTrollHealth - 50;
 					System.out.println("You managed to get a good hit on the "+enemy+" with your " + weapon);
 				}
-				if (x == 9 || x == 10) {
+				else if (x == 9 || x == 10) {
 					VTrollHealth = VTrollHealth - 10000;
 					System.out.println("in a glorious flip you managed to assassinate the "+enemy+" with your " + weapon);
 					break;
@@ -128,7 +123,8 @@ public class CombatExample {
 				System.out.println("not a valid command");
 			}
 
-		} while (PlayerHealth > 0 || VTrollHealth > 0);
+		} 
+		while (PlayerHealth > 0 || VTrollHealth > 0);
 		// states that itll do the loop while playerhealth is more than 0 OR
 		// VTrollHealth is more than 0
 
