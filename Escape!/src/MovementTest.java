@@ -16,6 +16,12 @@ public class MovementTest {
 			System.out.println("what do you want to do?");
 			String PlayerMovement = Move.nextLine();
 			if (PlayerMovement.equalsIgnoreCase("North")) {
+				//Win Condition
+				// will have to add "&& burlyguarddead" here to ensure that they must kill the guard first
+		if (RoomComplete.equals("1c") && PlayerMovement.equalsIgnoreCase("north")/*&& burlyguarddead*/) {
+			System.out.println("Congratulations you escaped");
+			break;
+		}
 				// 4th Floor 3rd column
 				if (RoomComplete.equals("4i")) {
 					FDestination = "4f";
@@ -698,6 +704,7 @@ public class MovementTest {
 			else {
 				System.out.println("Command Unrecognized try again");
 			}
+		
 		} while (true);
 	}
 }
