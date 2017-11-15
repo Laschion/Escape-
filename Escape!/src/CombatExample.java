@@ -9,7 +9,7 @@ public class CombatExample {
 		int PlayerHealth = 200;
 		int WeaponValue = 0;
 		int rgnPills = 20; 
-		String enemy = "henchman";
+		String enemy = "Burly Guard";
 		// we can go ahead and change just this value for each fight
 		Scanner KillMonster = new Scanner(System.in);
 		Scanner WeaponScanner = new Scanner(System.in);
