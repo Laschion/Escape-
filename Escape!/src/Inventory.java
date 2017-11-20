@@ -13,6 +13,11 @@ public class Inventory {
 		boolean FullInven = false;
 		//Items[0]="String";  would be the format
 		String userAnswer = null;
+		Items[0]="mace";
+		Items[1]="Sword";
+				Items[2]="Key";
+						Items[3]="Hat";
+								Items[4]="garbage";
 
 		// Will change this in room to room only adding the values here for testing
 		// purposes
